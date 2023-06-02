@@ -1,3 +1,7 @@
+def bitcoinToEuros(bitcoin_amount, bitcoin_value_euros):
+    euros_value = bitcoin_amount * bitcoin_value_euros
+    return euros_value
+
 import dask.dataframe as dd
 import dask.bag as db
 import os
@@ -76,5 +80,11 @@ df.mean()
 #calcula la desviacion estandar de todas las columnas
 df.std()
 
-#agregamos una columna con el bitcoin_value_euros por aeropuerto
-df['bitcoin_value_euros_aeropuerto']=df['bitcoin_value_euros']/df['airport_id']
+#agregamos una columna euros_value que sale de la funcion bitcoinToEuros
+df['euros_value']=bitcoinToEuros(df['bitcoin_value'],df['bitcoin_value_euros']) 
+
+# calcula la matriz de correlacion de todas las columnas
+df.corr()
+ 
+# representamos la columna euros_value en un grafico de barras
+df['euros_value'].plot.bar()
