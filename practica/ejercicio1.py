@@ -76,3 +76,5 @@ df.mean()
 #calcula la desviacion estandar de todas las columnas
 df.std()
 
+#agregamos una columna con el bitcoin_value_euros por aeropuerto
+df['bitcoin_value_euros_aeropuerto']=df['bitcoin_value_euros']/df['airport_id']
