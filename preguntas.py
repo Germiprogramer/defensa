@@ -1,0 +1,14 @@
+#pregunta 1
+# ¿Cómo se aplicó la programación paralela usando Dask para realizar la carga del conjunto de datos, la eliminación de registros duplicados, y los cálculos de media y desviación estándar? Explica el procedimiento y cualquier optimización que hayas implementado para mejorar la eficiencia.
+# respuesta 1
+# Usamos dask para ser mas eficiente ya que engloba Numpy, Pandas, y Scikit-Learn, y nos permite trabajar con grandes conjuntos de datos. He leido el csv y creado el dataframe. He sacado su informacion como el numero de filas y columnas. Posteriormente he eliminado los duplicados y he sacado la media y la desviacion estandar de las columnas que me interesaban. He usado el metodo compute para que se ejecute en paralelo(como se aprecia en la entrega del trabajo final).
+
+#pregunta 2
+#Si tuvieras que escalar este proyecto a un conjunto de datos más grande que no cabría en la memoria de una sola máquina, ¿cómo distribuirías los datos y el trabajo entre diferentes máquinas usando Dask? Describe la estrategia que usarías y por qué crees que sería efectiva.
+# respuesta 2
+#Para escalar un conjunto de datos más grande que no quepa en la memoria de una sola máquina utilizando Dask, se puede seguir una estrategia de distribución de datos y trabajo entre múltiples máquinas. Los pasos son los  siguientes: División de datos(usando metodos como dask.array o dask.dataframe). Tambien se Configura el clúster usando la biblioteca dask.distributed. Por ultimo se paraleliza el trabajo utilizando dask para distribuir el trabajo entre varias maquinas de cluster. Dask maneja automáticamente la comunicación y la coordinación entre las máquinas del clúster. Y tambien Dask ofrece la capacidad de escalar dinámicamente el clúster según las necesidades de los datos y la carga de trabajo
+
+#pregunta 3
+#Cuando calculaste la matriz de correlación y aplicaste el algoritmo de tu elección, ¿cómo se benefició tu análisis de la programación paralela y distribuida? Explica cómo la paralelización y la distribución del trabajo mejoraron el rendimiento de estos cálculos y cualquier desafío que hayas encontrado en el camino.
+# respuesta 3
+#Al calcular la matriz de correlación y aplicar algoritmos en conjuntos de datos grandes, la programación paralela y distribuida puede brindar varios beneficios significativos para mejorar el rendimiento del análisis. Se mejora el rendimiento, se puede manejar una mayor carga de trabajo sin problemas de memoria o recursos insuficientes, y  La programación distribuida ofrece la capacidad de escalar horizontalmente agregando más máquinas al clúster de cómputo.
